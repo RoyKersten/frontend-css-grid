@@ -1,1 +1,62 @@
 /*Maak hier jouw CSS!*/
+
+.container {
+    background-color: bisque;
+    color: white;
+
+    display: grid;
+    grid-gap: 16px;
+    padding: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-template-areas:
+            "left-small"
+            "left-large"
+            "right-top"
+            "right-middle"
+            "middle-middle"
+            "."
+            "footer";
+}
+
+.grid-item {
+    background-color: #ad3923;
+    padding: 8px;
+}
+
+.grid-left-small {
+    grid-area: left-small;
+}
+
+.grid-left-large {
+    grid-area: left-large;
+}
+
+.grid-right-top {
+    grid-area: right-top;
+}
+
+.grid-middle-block {
+    grid-area: middle-middle;
+}
+
+.grid-dynamic-right {
+    grid-area: right-middle;
+}
+
+.grid-footer {
+    grid-area: footer;
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 240px 100px auto 50px;
+        grid-template-areas:
+            "left-small right-top right-top"
+            "left-large right-top right-top"
+            "left-large middle-middle right-middle"
+            "left-large middle-middle ."
+            "footer footer footer";
+    }
+}
